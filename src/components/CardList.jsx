@@ -2,7 +2,8 @@ import React from "react";
 import { Button, Card, Modal, ListGroup, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const ListCard = ({ poke, loading, info }) => {
+const ListCard = ({ poke, loading, info, data }) => {
+
   return (
     <>
       {loading ? (
@@ -10,12 +11,14 @@ const ListCard = ({ poke, loading, info }) => {
       ) : (
         poke.map((itm) => {
           return (
+            <>
+      
             <ListGroup className="list" key={itm.id}>
-              <ListGroup.Item className="list-pkm">
-                <div className="row" onClick={() => info(itm)}>
+              <ListGroup.Item className="list-pkm shadow">
+                <div className="row" onClick={() => {info(itm)}} >
                   <div className="col-2">
                     <img
-                      className="img-card"
+                      className="img-card" 
                       src={itm.sprites.front_default}
                       alt="gambar"
                     />
@@ -23,10 +26,12 @@ const ListCard = ({ poke, loading, info }) => {
                   <div className="col-8">
                     <h3 className="text-name">{itm.name}</h3>
                   </div>
-                  <div className="col"></div>
+                  
                 </div>
               </ListGroup.Item>
             </ListGroup>
+            
+            </>
           );
         })
       )}

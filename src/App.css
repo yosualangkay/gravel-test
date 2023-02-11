@@ -1,26 +1,50 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 body{
-  background-color: aquamarine !important;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.alert{
+  margin-top: 20px;
 }
 
 .img-detail{
-  width: 300px;
+  width: 300px !important;
   justify-content: center;
   display:block; 
   margin:auto;
+}
+.btn-move{
+  position: fixed;
+  z-index: 1;
+  margin-top: 10px;
+  right: 0;
+  margin-right: 10px;
+}
+.right{
+  border: 2px solid rgb(136, 136, 136) !important;
+  border-radius: 12px;
+  padding: 8px;
+}
+.mve{
+  text-align: justify;
+  text-transform: capitalize;  
+}
+.moves{
+ 
+}
+.list-kiri{
+  
+}
+@font-face{
+  font-family: pokemon;
+  src:url(../src/components/assets/font/pokemon/Pokemon\ Solid.ttf)
+}
+
+.title{
+  font-family: pokemon;
+  color: #fccf00;
+  -webkit-text-stroke: 3px #2468b1;
 }
 
 .home{
@@ -40,6 +64,11 @@ body{
 }
 .list-pkm{
   margin: 10px;
+  cursor: pointer;
+}
+.list-pkm:hover{
+  background-color: rgb(207, 32, 47);
+  color: white;
 }
 .list-pokemon{
   width: 50%;
@@ -51,27 +80,22 @@ body{
 .img-card{
   
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-name{
+  text-transform: capitalize;
+  margin-top: 30px;
+}
+.group{
+  width: 80%;
+}
+.ability{
+  text-align: justify;
+}
+.detail-text {
+  text-align: justify;
+  text-transform: capitalize;
+}
+.title-detail{
+  text-align: justify;
+  text-transform: capitalize;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

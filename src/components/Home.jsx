@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import ListCard from "./CardList";
 import Detail from "./Detail";
+import { Alert, Button } from "react-bootstrap";
 
 const Home = () => {
   const [dataPokemon, setDataPokemon] = useState([]);
@@ -19,7 +20,6 @@ const Home = () => {
     setPrevUrl(res.data.previous);
     getPokemon(res.data.results);
     setLoading(false);
-    // console.log(dataPokemon)
   };
 
   const getPokemon = async (res) => {
@@ -37,19 +37,39 @@ const Home = () => {
     pokemonFunc();
   }, [url]);
 
+  const turun = () => {
+    document.getElementById('detail').scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
   return (
-    <div className="row">
-      <div className="col">
+
+    <div className="container">
+      <Button className="btn-move" onClick={turun} >Move to Detail</Button>
+
+      <div className="listpoke">
+      <h1 className="title">List Pokemon</h1>      
         <ListCard
           poke={dataPokemon}
           loading={loading}
           info={(pk) => setPokeData(pk)}
+          data={pokeData}
+          
         />
       </div>
-      <div className="col">
-        <h1>Detail Pokemon</h1>
-        <Detail data={pokeData} />
-      </div>
+        <div className="detailpoke" id="detail">
+        <h1 className="title">Detail Pokemon</h1>
+        {
+          (!pokeData) ? (
+            <Alert className="alert" variant="primary">
+              Pilih Pokemon untuk melihat detail!
+            </Alert>
+          ) : (
+            <Detail data={pokeData} />
+          )
+        }
+        </div>
+
     </div>
   );
 };

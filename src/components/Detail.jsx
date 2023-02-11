@@ -9,21 +9,20 @@ const Detail = ({ data }) => {
         ""
       ) : (
         <>
-          <div className="row">
-            <div className="col-4">
+          <div className=" row">
+            
               <img
                 className="img-detail"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
                 alt=""
               />
-            </div>
-            <div className="col-10">
+            <div className="right col-12">
               {/* name */}
               <div className="row">
                 <div className="col-2">
-                  <h4>Name: </h4>
+                  <h4 className="title-detail">Name: </h4>
                 </div>
-                <div className="col-3 ">
+                <div className="detail-text col-10 ">
                   <h4>{data.name}</h4>
                 </div>
               </div>
@@ -32,14 +31,16 @@ const Detail = ({ data }) => {
               <div className="ability">
                 <div className="row">
                   <div className="col-2">
-                    <h4>Abilities:</h4>
+                    <h4 className="title-detail">Abilities:</h4>
                   </div>
-                  <div className="col-3">
+                  <div className="detail-text col-10">
                     {data.abilities.map((poke) => {
                       return (
                         <>
                           <div className="group">
-                            <h4>{poke.ability.name}</h4>
+                            <ul>
+                              <li><h4>{poke.ability.name}</h4></li>
+                            </ul>
                           </div>
                         </>
                       );
@@ -51,10 +52,10 @@ const Detail = ({ data }) => {
               {/* type */}
               <div className="type">
                 <div className="row">
-                  <div className="col-2">
-                    <h4>Type: </h4>
+                  <div className="detail-text  col-2">
+                    <h4 className="title-detail">Type: </h4>
                   </div>
-                  <div className="col-3">
+                  <div className="detail-text  col-10">
                     {data.types.map((poke) => {
                       return (
                         <>
@@ -71,9 +72,9 @@ const Detail = ({ data }) => {
               {/* weight */}
               <div className="row">
                 <div className="col-2">
-                  <h4>Weight: </h4>
+                  <h4 className="title-detail">Weight: </h4>
                 </div>
-                <div className="col-3">
+                <div className="detail-text  col-10">
                   <h4>{data.weight}</h4>
                 </div>
               </div>
@@ -81,25 +82,27 @@ const Detail = ({ data }) => {
               {/* height */}
               <div className="row">
                 <div className="col-2">
-                  <h4>Height: </h4>
+                  <h4 className="title-detail">Height: </h4>
                 </div>
-                <div className="col-3">
-                  <h4>{data.height}</h4>
+                <div className="detail-text  col-10">
+                  <h4 className="title-detail">{data.height}</h4>
                 </div>
               </div>
               <hr />
               {/* Moves */}
-              <div className="type">
+              <div className="moves" >
                 <div className="row">
                   <div className="col-2">
-                    <h4>Moves: </h4>
+                    <h4 className="title-detail">Moves: </h4>
                   </div>
-                  <div className="col-3">
+                  <div className="mve  col-10 " fluid>
                     {data.moves.map((poke) => {
                       return (
                         <>
-                          <div className="group">
-                            <h4>{poke.move.name}</h4>
+                          <div className="group" fluid>
+                            <ul>
+                              <li><h4>{poke.move.name}</h4></li>
+                            </ul>
                           </div>
                         </>
                       );
@@ -113,9 +116,9 @@ const Detail = ({ data }) => {
               <div className="stats">
                 <div className="row">
                   <div className="col-2">
-                    <h4>Stats: </h4>
+                    <h4 className="title-detail">Stats: </h4>
                   </div>
-                  <div className="col-3">
+                  <div className="detail-text  col-10">
                     {data.stats.map((poke) => {
                       return (
                         <>
